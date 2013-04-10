@@ -48,27 +48,27 @@ CGRectResetOrigin(CGRect rect)
 	return rect;
 }
 
-void setViewLeft(UIView * view, CGFloat left){
+CG_INLINE void setViewLeft(UIView * view, CGFloat left){
     view.frame = CGRectSetLeft(view.frame, left);
 }
-void setViewRight(UIView * view, CGFloat right){
+CG_INLINE void setViewRight(UIView * view, CGFloat right){
     view.frame = CGRectSetLeft(view.frame, right - view.frame.size.width);
 }
-void setViewTop(UIView * view, CGFloat top){
+CG_INLINE void setViewTop(UIView * view, CGFloat top){
     view.frame = CGRectSetTop(view.frame, top);
 }
-void setViewBottom(UIView * view, CGFloat bottom){
+CG_INLINE void setViewBottom(UIView * view, CGFloat bottom){
     view.frame = CGRectSetTop(view.frame, bottom - view.frame.size.height);
 }
-void setViewHeight(UIView * view, CGFloat height){
+CG_INLINE void setViewHeight(UIView * view, CGFloat height){
     view.frame = CGRectSetHeight(view.frame, height);
 }
-void setViewWidth(UIView*view, CGFloat width){
+CG_INLINE void setViewWidth(UIView*view, CGFloat width){
     view.frame = CGRectSetWidth(view.frame, width);
 }
-void placeViewAbove(UIView * below, UIView * above, CGFloat space){
+CG_INLINE void placeViewAbove(UIView * below, UIView * above, CGFloat space){
     setViewBottom(above, below.frame.origin.y - space );
 }
-void placeViewBelow(UIView * above, UIView * below, CGFloat space){
+CG_INLINE void placeViewBelow(UIView * above, UIView * below, CGFloat space){
     setViewTop(below, CGRectGetMaxY(above.frame) + space);
 }
