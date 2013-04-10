@@ -47,3 +47,28 @@ CGRectResetOrigin(CGRect rect)
 	rect.origin = CGPointZero;
 	return rect;
 }
+
+void setViewLeft(UIView * view, CGFloat left){
+    view.frame = CGRectSetLeft(view.frame, left);
+}
+void setViewRight(UIView * view, CGFloat right){
+    view.frame = CGRectSetLeft(view.frame, right - view.frame.size.width);
+}
+void setViewTop(UIView * view, CGFloat top){
+    view.frame = CGRectSetTop(view.frame, top);
+}
+void setViewBottom(UIView * view, CGFloat bottom){
+    view.frame = CGRectSetTop(view.frame, bottom - view.frame.size.height);
+}
+void setViewHeight(UIView * view, CGFloat height){
+    view.frame = CGRectSetHeight(view.frame, height);
+}
+void setViewWidth(UIView*view, CGFloat width){
+    view.frame = CGRectSetWidth(view.frame, width);
+}
+void placeViewAbove(UIView * below, UIView * above, CGFloat space){
+    setViewBottom(above, below.frame.origin.y - space );
+}
+void placeViewBelow(UIView * above, UIView * below, CGFloat space){
+    setViewTop(below, CGRectGetMaxY(above.frame) + space);
+}
