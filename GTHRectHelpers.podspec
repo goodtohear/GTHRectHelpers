@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary      = "Utility macros for working with CGRect, CGSize, CGPoint etc..."
   s.homepage     = "http://github.com/goodtohear/GTHRectHelpers"
 
-  s.license      = 'MIT (example)'
+  s.license      = 'MIT'
   s.author       = { "Michael Forrest" => "michael.forrest@gmail.com" }
   s.source       = { :git => "https://github.com/goodtohear/GTHRectHelpers.git", :tag => "0.0.1" }
 
